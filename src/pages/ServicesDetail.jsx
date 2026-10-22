@@ -35,7 +35,6 @@ export default function ServicesDetail() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Scroll ke paling atas saat halaman pertama kali dibuka
     window.scrollTo(0, 0);
 
     // Setup Lenis Smooth Scroll
@@ -44,13 +43,13 @@ export default function ServicesDetail() {
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
-    // Animasi Intro (Teks muncul dari bawah)
+    // Animasi Intro 
     gsap.fromTo(".service-title-anim", 
       { y: 100, opacity: 0 }, 
       { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power4.out", delay: 0.2 }
     );
 
-    // Animasi Fade-in untuk setiap list layanan saat di-scroll
+    // Animasi Fade-in
     const serviceBlocks = gsap.utils.toArray('.service-block');
     serviceBlocks.forEach((block) => {
       gsap.fromTo(block, 
@@ -74,7 +73,7 @@ export default function ServicesDetail() {
   return (
     <div ref={containerRef} className="bg-zinc-50 min-h-screen font-sans text-black selection:bg-blue-600 selection:text-white">
       
-      {/* HEADER NAVBAR (Sederhana untuk halaman dalam) */}
+      {/* HEADER NAVBAR */}
       <header className="fixed top-0 left-0 w-full z-50 px-6 py-6 mix-blend-difference text-white flex justify-between items-center pointer-events-none">
         <Link to="/" className="flex items-center gap-2 text-sm font-bold tracking-[0.2em] pointer-events-auto hover:-translate-x-2 transition-transform">
           <ArrowLeft size={20} /> KEMBALI

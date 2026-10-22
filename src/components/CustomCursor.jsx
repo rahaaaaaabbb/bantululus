@@ -29,7 +29,6 @@ export default function CustomCursor() {
     const handleMouseOver = (e) => {
       const target = e.target;
       if (target.tagName.toLowerCase() === 'a' || target.tagName.toLowerCase() === 'button' || target.closest('button') || target.closest('a')) {
-        // MENGUBAH WIDTH DAN HEIGHT LANGSUNG (Bukan Scale) AGAR TETAP TAJAM
         gsap.to(cursor, { 
           width: "72px", 
           height: "72px", 
@@ -43,7 +42,6 @@ export default function CustomCursor() {
     const handleMouseOut = (e) => {
       const target = e.target;
       if (target.tagName.toLowerCase() === 'a' || target.tagName.toLowerCase() === 'button' || target.closest('button') || target.closest('a')) {
-        // KEMBALIKAN KE UKURAN AWAL (24px)
         gsap.to(cursor, { 
           width: "24px", 
           height: "24px", 
@@ -68,7 +66,6 @@ export default function CustomCursor() {
   return (
     <div 
       ref={cursorRef} 
-      /* Hapus w-6 dan h-6 dari class, pindahkan ke style agar bisa dianimasikan GSAP */
       className="fixed top-0 left-0 border border-zinc-200 rounded-full pointer-events-none z-[9999] mix-blend-difference -translate-x-1/2 -translate-y-1/2 origin-center"
       style={{ width: "24px", height: "24px", willChange: "width, height, transform, opacity" }}
     ></div>

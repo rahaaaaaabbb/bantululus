@@ -4,7 +4,7 @@ import CustomCursor from './components/CustomCursor';
 import Home from './pages/Home';
 import ServicesDetail from './pages/ServicesDetail';
 import BehindScenes from './pages/BehindScenes';
-import PriceList from './pages/PriceList'; // <--- Tambahkan import PriceList di sini
+import PriceList from './pages/PriceList';
 
 function App() {
   return (
@@ -15,7 +15,6 @@ function App() {
         <Route path="/services" element={<ServicesDetail />} />
         <Route path="/behind-the-scenes" element={<BehindScenes />} />
         
-        {/* Tambahkan jalur untuk halaman Price List di sini */}
         <Route path="/pricelist" element={<PriceList />} /> 
       </Routes>
     </Router>

@@ -49,7 +49,6 @@ const PriceList = () => {
     return () => lenis.destroy();
   }, []);
 
-  // Animasi saat pindah tab
   useEffect(() => {
     gsap.fromTo(contentRef.current,
       { opacity: 0, y: 20 },
@@ -136,13 +135,11 @@ const PriceList = () => {
               className={`text-sm md:text-base font-bold tracking-[0.2em] uppercase transition-all duration-300 relative ${activeTab === tab ? 'text-white' : 'text-zinc-600 hover:text-zinc-400'}`}
             >
               {tab}
-              {/* Garis bawah aktif */}
               <span className={`absolute -bottom-[25px] left-0 h-[2px] bg-white transition-all duration-300 ${activeTab === tab ? 'w-full' : 'w-0'}`}></span>
             </button>
           ))}
         </div>
 
-        {/* Tab Content (Daftar Harga clickable ke Instagram) */}
         <div ref={contentRef} className="flex flex-col">
           {services[activeTab].map((service, idx) => (
             <a 

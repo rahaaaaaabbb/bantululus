@@ -21,7 +21,7 @@ export default function Home() {
   const servicesRef = useRef(null);
   const pricingRef = useRef(null);
   const projectListRef = useRef(null);
-  const resultSectionRef = useRef(null); // Ref baru untuk section HASIL
+  const resultSectionRef = useRef(null);
   const horizontalTrackRef = useRef(null);
 
   useEffect(() => {
@@ -143,17 +143,17 @@ export default function Home() {
     // --- ANIMASI INTERAKTIF UNTUK SECTION HASIL ---
     if (resultSectionRef.current) {
       gsap.fromTo(".result-anim",
-        { opacity: 0, y: 100, scale: 0.95 }, // Posisi awal: di bawah, transparan, agak kecil
+        { opacity: 0, y: 100, scale: 0.95 }, 
         {
           opacity: 1,
           y: 0,
           scale: 1,
           duration: 1,
-          stagger: 0.15, // Muncul berurutan
+          stagger: 0.15, 
           ease: "power3.out",
           scrollTrigger: {
             trigger: resultSectionRef.current,
-            start: "top 60%", // Terpicu saat masuk 60% layar
+            start: "top 60%",
           }
         }
       );

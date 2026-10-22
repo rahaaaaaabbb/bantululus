@@ -8,7 +8,6 @@ import Magnetic from '../components/Magnetic';
 export default function BehindScenes() {
   
   useEffect(() => {
-    // Pastikan halaman mulai dari paling atas
     window.scrollTo(0, 0);
 
     // 1. SETUP LENIS SMOOTH SCROLL KHUSUS HALAMAN INI
@@ -29,19 +28,19 @@ export default function BehindScenes() {
     .fromTo(".bts-photo-card",
       { y: 100, opacity: 0, rotationX: -15 },
       { y: 0, opacity: 1, rotationX: 0, duration: 1, stagger: 0.2, ease: "power3.out" },
-      "-=0.5" // Mulai sedikit tumpang tindih dengan animasi teks
+      "-=0.5" 
     );
 
     return () => {
       lenis.destroy();
-      gsap.killTweensOf("*"); // Bersihkan animasi saat pindah halaman
+      gsap.killTweensOf("*"); 
     };
   }, []);
 
-  // DATA FOTO ANDA (Sesuaikan nama file jika berbeda)
+  
   const myPhotos = [
     { 
-      url: "/bts-1.jpg", // Mengambil dari folder public/
+      url: "/bts-1.jpg", 
       title: "Brainstorming Session", 
       desc: "Diskusi awal penentuan arsitektur sistem dan database." 
     },
@@ -58,7 +57,6 @@ export default function BehindScenes() {
   ];
 
   return (
-    // Gunakan perspective untuk efek rotasi 3D saat foto muncul
     <div className="bg-zinc-950 min-h-screen font-sans text-white selection:bg-blue-600 selection:text-white overflow-hidden" style={{ perspective: "1000px" }}>
       
       {/* HEADER NAVBAR Sederhana */}
